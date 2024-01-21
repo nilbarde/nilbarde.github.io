@@ -40,11 +40,30 @@
     background-color: #eeeeee;
 }
 
+.project-space-dark-gray {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #999999;
+}
+
 .project-inside {
     margin-left: 22%;
     margin-right: 22%;
     text-align: justify;
     text-justify: inter-word;
+}
+
+.section-title {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 4em;
+    margin: 0; /* Remove default margin */
+    color: #232323;
+    font-style: normal;
+    line-height: 1.2;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: center;
 }
 
 .project-title {
