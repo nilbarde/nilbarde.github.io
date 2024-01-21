@@ -1,0 +1,72 @@
+.white-back {
+    background-color: rgba(255, 255, 255, 0.75);
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* 100% of the viewport height */
+    position: relative;
+    display: contents;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #000000; /* Text color on top of the overlay */
+    z-index: -2;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.project-container {
+    /* margin-left: 20%; Adjust the margin to move the logo to the right */
+    /* max-width: 40%; */
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.project-back-white {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #ffffff;
+}
+
+.project-back-gray {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #eeeeee;
+}
+
+.project-inside {
+    margin-left: 22%;
+    margin-right: 22%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.project-title {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 3em;
+    margin: 0; /* Remove default margin */
+    color: #232323;
+    font-style: normal;
+    line-height: 1.2;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+.project-subtitle {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 2em;
+    color: #232323;
+    font-style: normal;
+    line-height: 1.1;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+

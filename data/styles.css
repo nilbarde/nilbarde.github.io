@@ -1,0 +1,136 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.5;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(238, 238, 238, 0.6); /* Adjust the alpha value to control the overlay color darkness */
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 1000; /* Ensure the header is above other elements */
+}
+
+.logo-container {
+    margin-left: 16%; /* Adjust the margin to move the logo to the right */
+}
+
+.logo-container img {
+    border-radius: 50%; /* Make the image circular */
+    width: 48px; /* Adjust the size of the circular image */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 5%;
+    align-items: center;
+}
+
+nav li {
+    margin: 10px;
+    width: 100px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #232323;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.menu {
+    margin-right: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-button-boxed {
+    text-decoration: none;
+    color: #232323;
+    font-weight: 600;
+    font-size: 1.1em;
+
+    border: 2px solid #000000; /* Border color for the box */
+    padding: 12px 15px; /* Adjust padding as needed */
+    border-radius: 5px; /* Optional: Add rounded corners to the box */
+    margin: 16px;
+}
+
+.overlay {
+    background-image: url('../data/images/mbr-1920x1280.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* 100% of the viewport height */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000000; /* Text color on top of the overlay */
+    z-index: -2;
+}
+
+.overlay::before {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.75); /* Adjust the alpha value to control the overlay color darkness */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.main {
+    margin-left: 10%;
+    align-items: center;
+    /* text-align: center; */
+    padding: 20px;
+    margin-left: 80px;
+}
+
+.name-container {
+    /* margin-left: 20%; Adjust the margin to move the logo to the right */
+    /* max-width: 40%; */
+    display: flex;
+    z-index: 1;
+}
+
+.name-inside {
+    margin-left: 16%;
+    /* margin-right: 20%; */
+    /* max-width: 40%; */
+    /* width: 1200px; */
+    width: 33%;
+    /* display: flex; */
+}
+
+h1 {
+    font-size: 4.6em;
+    margin: 0; /* Remove default margin */
+    color: #232323;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.description {
+    line-height: 1.5;
+    font-size: 1.2rem;
+    font-style: normal;
+    text-align: justify;
+    text-justify: inter-word;
+}
