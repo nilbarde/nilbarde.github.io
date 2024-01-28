@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="bash-scripting-guide" class="guides-h1"> Bash Scripting Guide </h1>
+
+<p class="explain">Welcome to the Bash Scripting Guide! This comprehensive guide is designed to help you learn and master bash scripting, covering fundamental concepts and progressively more advanced topics. Whether you are a beginner or looking to enhance your scripting skills, this guide has you covered.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="01.introduction.html">Introduction to Bash</a> </li>
+    <li class="explain"> <a href="02.first_script.html">Writing Your First Script</a> </li>
+    <li class="explain"> <a href="03.variables.html">Variables and Data Types</a> </li>
+    <li class="explain"> <a href="04.control_structures.html">Control Structures</a> </li>
+    <li class="explain"> <a href="05.functions.html">Functions</a> </li>
+    <li class="explain"> <a href="06.input_output.html">Input/Output</a> </li>
+    <li class="explain"> <a href="07.file_operations.html">File Operations</a> </li>
+    <li class="explain"> <a href="08.advance_topics.html">Advanced Topics</a> </li>
+    <li class="explain"> <a href="09.best_practices.html">Best Practices and Tips</a> </li>
+    <li class="explain"> <a href="10.examples.html">Case Studies and Examples</a> </li>
+    <li class="explain"> <a href="11.resources.html">Resources and Further Learning</a> </li>
+</ol>
+<h2 id="introduction-to-bash" class="guides-h2"> Introduction to Bash </h2>
+
+<ul>
+    <li class="explain"> <strong>Overview</strong> </li>
+    <ul>
+        <li class="explain"> What is Bash? </li>
+        <li class="explain"> Why learn Bash scripting? </li>
+    </ul>
+    <li class="explain"> <strong>Getting Started</strong> </li>
+    <ul>
+        <li class="explain"> Opening a Bash shell </li>
+        <li class="explain"> Basic commands (<code>ls</code>, <code>cd</code>, <code>pwd</code>, etc.) </li>
+    </ul>
+</ul>
+<h2 id="writing-your-first-script" class="guides-h2"> Writing Your First Script </h2>
+
+<ul>
+    <li class="explain"> <strong>Creating a Bash Script</strong> </li>
+    <ul>
+        <li class="explain"> Text editors for scripting (e.g., <code>nano</code>, <code>vim</code>) </li>
+        <li class="explain"> Creating and saving your first script </li>
+    </ul>
+    <li class="explain"> <strong>Running a Bash Script</strong> </li>
+    <ul>
+        <li class="explain"> Executing scripts (<code>chmod +x</code>, <code>./script.sh</code>) </li>
+        <li class="explain"> Running scripts without execution permissions (<code>bash script.sh</code>) </li>
+    </ul>
+</ul>
+<h2 id="variables-and-data-types" class="guides-h2"> Variables and Data Types </h2>
+
+<ul>
+    <li class="explain"> <strong>Variables</strong> </li>
+    <ul>
+        <li class="explain"> Declaring and using variables </li>
+        <li class="explain"> Variable naming conventions </li>
+    </ul>
+    <li class="explain"> <strong>Data Types</strong> </li>
+    <ul>
+        <li class="explain"> Strings, integers, arrays </li>
+        <li class="explain"> Special variables (<code>$0</code>, <code>$1</code>, <code>$#</code>, <code>$@</code>, <code>$?</code>) </li>
+    </ul>
+</ul>
+<h2 id="control-structures" class="guides-h2"> Control Structures </h2>
+
+<ul>
+    <li class="explain"> <strong>Conditional Statements</strong> </li>
+    <ul>
+        <li class="explain"> <code>if</code>, <code>elif</code>, <code>else</code> statements </li>
+        <li class="explain"> Comparison operators </li>
+    </ul>
+    <li class="explain"> <strong>Loops</strong> </li>
+    <ul>
+        <li class="explain"> <code>for</code>, <code>while</code>, <code>until</code> loops </li>
+        <li class="explain"> Loop control statements (<code>break</code>, <code>continue</code>) </li>
+    </ul>
+</ul>
+<h2 id="functions" class="guides-h2"> Functions </h2>
+
+<ul>
+    <li class="explain"> <strong>Defining Functions</strong> </li>
+    <ul>
+        <li class="explain"> Syntax for function creation </li>
+        <li class="explain"> Function arguments and return values </li>
+    </ul>
+    <li class="explain"> <strong>Scope and Variables</strong> </li>
+    <ul>
+        <li class="explain"> Local and global variables in functions </li>
+    </ul>
+</ul>
+<h2 id="input/output" class="guides-h2"> Input/Output </h2>
+
+<ul>
+    <li class="explain"> <strong>Reading User Input</strong> </li>
+    <ul>
+        <li class="explain"> <code>read</code> command </li>
+        <li class="explain"> Input validation </li>
+    </ul>
+    <li class="explain"> <strong>Output to Screen and Files</strong> </li>
+    <ul>
+        <li class="explain"> <code>echo</code>, <code>printf</code> </li>
+        <li class="explain"> Redirecting output (<code>>, >>&#60/code>, &#60code>&#60</code>) </li>
+    </ul>
+</ul>
+<h2 id="file-operations" class="guides-h2"> File Operations </h2>
+
+<ul>
+    <li class="explain"> <strong>File Testing</strong> </li>
+    <ul>
+        <li class="explain"> Checking if a file exists, is readable, etc. </li>
+    </ul>
+    <li class="explain"> <strong>Reading and Writing Files</strong> </li>
+    <ul>
+        <li class="explain"> <code>cat</code>, <code>touch</code>, <code>echo</code> to manipulate files </li>
+    </ul>
+    <li class="explain"> <strong>File Operations</strong> </li>
+    <ul>
+        <li class="explain"> Copying, moving, and deleting files and directories </li>
+    </ul>
+</ul>
+<h2 id="advanced-topics" class="guides-h2"> Advanced Topics </h2>
+
+<ul>
+    <li class="explain"> <strong>Regular Expressions</strong> </li>
+    <ul>
+        <li class="explain"> Using <code>grep</code>, <code>sed</code>, and <code>awk</code> </li>
+    </ul>
+    <li class="explain"> <strong>Process Management</strong> </li>
+    <ul>
+        <li class="explain"> Background processes, signals </li>
+    </ul>
+    <li class="explain"> <strong>Error Handling</strong> </li>
+    <ul>
+        <li class="explain"> Exit codes, trapping signals </li>
+    </ul>
+    <li class="explain"> <strong>Debugging</strong> </li>
+    <ul>
+        <li class="explain"> <code>set -x</code>, <code>set +x</code> </li>
+    </ul>
+</ul>
+<h2 id="best-practices-and-tips" class="guides-h2"> Best Practices and Tips </h2>
+
+<ul>
+    <li class="explain"> <strong>Code Style and Formatting</strong> </li>
+    <ul>
+        <li class="explain"> Indentation, commenting, naming conventions </li>
+    </ul>
+    <li class="explain"> <strong>Optimization Techniques</strong> </li>
+    <ul>
+        <li class="explain"> Efficiency in script writing </li>
+    </ul>
+    <li class="explain"> <strong>Security Considerations</strong> </li>
+    <ul>
+        <li class="explain"> Handling sensitive data, avoiding common pitfalls </li>
+    </ul>
+</ul>
+<h2 id="case-studies-and-examples" class="guides-h2"> Case Studies and Examples </h2>
+
+<ul>
+    <li class="explain"> <strong>Real-world Examples</strong> </li>
+    <ul>
+        <li class="explain"> Scripting solutions for common tasks </li>
+    </ul>
+    <li class="explain"> <strong>Project Exercises</strong> </li>
+    <ul>
+        <li class="explain"> Practical exercises to reinforce learning </li>
+    </ul>
+</ul>
+<h2 id="resources-and-further-learning" class="guides-h2"> Resources and Further Learning </h2>
+
+<ul>
+    <li class="explain"> <strong>Books and Documentation</strong> </li>
+    <ul>
+        <li class="explain"> Recommended readings for deepening understanding </li>
+    </ul>
+    <li class="explain"> <strong>Online Platforms</strong> </li>
+    <ul>
+        <li class="explain"> Websites, forums, and communities for Bash scripting </li>
+    </ul>
+</ul>
+<hr>
+
+<h2 id="how-to-use-this-guide" class="guides-h2"> How to Use This Guide </h2>
+
+<p class="explain">Start with the <a href="01.introduction.html">Introduction to Bash</a> section and work your way through each topic sequentially. Each section provides a mix of theory, practical examples, and exercises to reinforce your learning.</p>
+
+<p class="explain">Feel free to jump to specific sections based on your current knowledge level or interests. The <a href="11.resources.html">Resources and Further Learning</a> section offers additional materials to deepen your understanding.</p>
+
+<p class="explain">Happy scripting!</p>
+
+<hr>
+
+<p class="explain"><em>If you have any suggestions, improvements, or would like to contribute to these guides, please open an issue or submit a pull request in my GitHub repository <a href="https://github.com/nilbarde/python-codes">python-codes</a>. Your feedback is highly appreciated!</em></p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

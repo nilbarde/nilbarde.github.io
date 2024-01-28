@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="bash-scripting-guide---case-studies-and-examples" class="guides-h1"> Bash Scripting Guide - Case Studies and Examples </h1>
+
+<p class="explain">This section provides real-world case studies and practical examples to reinforce your understanding of Bash scripting concepts.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-basic-script-structure">Basic Script Structure</a> </li>
+    <li class="explain"> <a href="#2-file-and-directory-manipulation">File and Directory Manipulation</a> </li>
+    <li class="explain"> <a href="#3-working-with-arrays">Working with Arrays</a> </li>
+    <li class="explain"> <a href="#4-advanced-control-structures">Advanced Control Structures</a> </li>
+    <li class="explain"> <a href="#5-input-validation-and-error-handling">Input Validation and Error Handling</a> </li>
+    <li class="explain"> <a href="#6-creating-a-simple-menu">Creating a Simple Menu</a> </li>
+    <li class="explain"> <a href="#7-text-processing-with-awk">Text Processing with awk</a> </li>
+    <li class="explain"> <a href="#8-recursive-file-operations">Recursive File Operations</a> </li>
+    <li class="explain"> <a href="#9-background-processes-and-job-control">Background Processes and Job Control</a> </li>
+    <li class="explain"> <a href="#10-interactive-scripting">Interactive Scripting</a> </li>
+</ol>
+<h2 id="1-basic-script-structure" class="guides-h2"> 1. Basic Script Structure </h2>
+
+<p class="explain">In this example, we'll create a simple Bash script to understand the basic structure and execution of scripts.</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+# Your script code here
+echo "Hello, World!"
+</code>
+</pre>
+
+<h2 id="2-file-and-directory-manipulation" class="guides-h2"> 2. File and Directory Manipulation </h2>
+
+<p class="explain">Explore how to manipulate files and directories using Bash scripting.</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+# Your script code here
+mkdir my_directory
+cd my_directory
+touch new_file.txt
+</code>
+</pre>
+
+<h2 id="3-working-with-arrays" class="guides-h2"> 3. Working with Arrays </h2>
+
+<p class="explain">Learn how to use arrays in Bash scripts.</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+# Your script code here
+fruits=("Apple" "Banana" "Orange")
+for fruit in "${fruits[@]}"; do
+  echo "I like $fruit"
+done
+</code>
+</pre>
+
+<h2 id="4-advanced-control-structures" class="guides-h2"> 4. Advanced Control Structures </h2>
+
+<p class="explain">See examples of advanced control structures, including nested loops and conditionals.</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+# Your script code here
+for ((i=1; i&#60=5; i++)); do
+  for ((j=1; j&#60=i; j++)); do
+    echo -n "* "
+  done
+  echo
+done
+</code>
+</pre>
+
+<h2 id="5-input-validation-and-error-handling" class="guides-h2"> 5. Input Validation and Error Handling </h2>
+
+<p class="explain">Learn how to validate user input and handle errors gracefully.</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+# Your script code here
+read -p "Enter a number: " num
+if ! [[ "$num" =~ ^[0-9]+$ ]]; then
+  echo "Error: Not a valid number."
+  exit 1
+fi
+echo "You entered: $num"
+</code>
+</pre>
+
+<h2 id="6-creating-a-simple-menu" class="guides-h2"> 6. Creating a Simple Menu </h2>
+
+<p class="explain">Build a simple menu system for user interaction.</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+# Your script code here
+echo "Choose an option:"
+select option in "Option 1" "Option 2" "Option 3"; do
+  case $option in
+    "Option 1") echo "You selected Option 1"; break;;
+    "Option 2") echo "You selected Option 2"; break;;
+    "Option 3") echo "You selected Option 3"; break;;
+    *) echo "Invalid option";;
+  esac
+done
+</code>
+</pre>
+
+<h2 id="7-text-processing-with-awk" class="guides-h2"> 7. Text Processing with awk </h2>
+
+<p class="explain">Explore text processing using the <code>awk</code> command in Bash scripts.</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+# Your script code here
+echo "John Doe,25" | awk -F ',' '{print "Name: " $1, "Age: " $2}'
+</code>
+</pre>
+
+<h2 id="8-recursive-file-operations" class="guides-h2"> 8. Recursive File Operations </h2>
+
+<p class="explain">Learn how to perform recursive file operations, such as searching for files in nested directories.</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+# Your script code here
+find . -type f -name "*.txt" -exec echo "Found file: {}" \;
+</code>
+</pre>
+
+<h2 id="9-background-processes-and-job-control" class="guides-h2"> 9. Background Processes and Job Control </h2>
+
+<p class="explain">Understand how to work with background processes and job control in Bash.</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+# Your script code here
+./background_process.sh &
+echo "Script continues while background process runs."
+</code>
+</pre>
+
+<h2 id="10-interactive-scripting" class="guides-h2"> 10. Interactive Scripting </h2>
+
+<p class="explain">Create an interactive script that takes user input and provides real-time feedback.</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+# Your script code here
+read -p "Enter your name: " name
+echo "Hello, $name! Welcome to the interactive script."
+</code>
+</pre>
+
+<p class="explain">These examples cover various aspects of Bash scripting, from basic structures to more advanced concepts. Use them as templates and modify them according to your specific scripting needs.</p>
+
+<hr>
+<p class="explain">Continue to <a href="11.resources.html">Part 11: Additional Resources</a>.</p>
+
+<p class="explain">Go back to <a href="README.html">Bash Scripting Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

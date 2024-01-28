@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="setting-up-ssh-key-for-github-on-ubuntu" class="guides-h1"> Setting Up SSH Key for GitHub on Ubuntu </h1>
+
+<p class="explain">This guide walks you through the process of setting up an SSH key for authenticating with GitHub on Ubuntu.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-check-for-existing-ssh-keys">Check for Existing SSH Keys</a> </li>
+    <li class="explain"> <a href="#2-generate-a-new-ssh-key">Generate a New SSH Key</a> </li>
+    <li class="explain"> <a href="#3-add-the-ssh-key-to-the-ssh-agent">Add the SSH Key to the SSH Agent</a> </li>
+    <li class="explain"> <a href="#4-add-the-ssh-key-to-your-github-account">Add the SSH Key to Your GitHub Account</a> </li>
+    <li class="explain"> <a href="#5-test-the-ssh-connection">Test the SSH Connection</a> </li>
+    <li class="explain"> <a href="#6-conclusion">Conclusion</a> </li>
+</ol>
+<h2 id="1-check-for-existing-ssh-keys" class="guides-h2"> 1. Check for Existing SSH Keys </h2>
+
+<p class="explain">Before generating a new SSH key, check if you already have existing keys. Open a terminal and run:</p>
+
+<pre class="language-bash">
+<code>
+ls -al ~/.ssh
+</code>
+</pre>
+
+<p class="explain">Look for existing keys, typically <code>id_rsa</code> and <code>id_rsa.pub</code>.</p>
+
+<h2 id="2-generate-a-new-ssh-key" class="guides-h2"> 2. Generate a New SSH Key </h2>
+
+<p class="explain">If you don't have an existing SSH key, generate a new one:</p>
+
+<pre class="language-bash">
+<code>
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+</code>
+</pre>
+
+<p class="explain">Follow the on-screen prompts, and you can leave the passphrase empty for simplicity.</p>
+
+<h2 id="3-add-the-ssh-key-to-the-ssh-agent" class="guides-h2"> 3. Add the SSH Key to the SSH Agent </h2>
+
+<p class="explain">Start the SSH agent:</p>
+
+<pre class="language-bash">
+<code>
+eval "$(ssh-agent -s)"
+</code>
+</pre>
+
+<p class="explain">Add your SSH key to the agent:</p>
+
+<pre class="language-bash">
+<code>
+ssh-add ~/.ssh/id_rsa
+</code>
+</pre>
+
+<h2 id="4-add-the-ssh-key-to-your-github-account" class="guides-h2"> 4. Add the SSH Key to Your GitHub Account </h2>
+
+<p class="explain">Copy the SSH key to your clipboard:</p>
+
+<pre class="language-bash">
+<code>
+xclip -sel clip &#60 ~/.ssh/id_rsa.pub
+</code>
+</pre>
+
+<p class="explain">if xclip is not installed then</p>
+<p class="explain">Display the SSH key:</p>
+
+<pre class="language-bash">
+<code>
+cat ~/.ssh/id_rsa.pub
+</code>
+</pre>
+
+<p class="explain">Copy the displayed key.</p>
+
+<p class="explain">Go to your GitHub account > Settings > SSH and GPG keys > New SSH key, and paste the copied key.</p>
+
+<h2 id="5-test-the-ssh-connection" class="guides-h2"> 5. Test the SSH Connection </h2>
+
+<p class="explain">Test the SSH connection to GitHub:</p>
+
+<pre class="language-bash">
+<code>
+ssh -T git@github.com
+</code>
+</pre>
+
+<p class="explain">If successful, you'll see a message indicating authentication.</p>
+
+<h2 id="6-conclusion" class="guides-h2"> 6. Conclusion </h2>
+
+<p class="explain">You have successfully set up an SSH key for GitHub on Ubuntu. This allows secure and convenient authentication when interacting with GitHub repositories.</p>
+
+<p class="explain">This guide covers the key steps to set up and configure an SSH key for GitHub on Ubuntu. Users can follow the instructions to ensure a secure and seamless authentication process when interacting with GitHub repositories</p>
+
+<hr>
+
+<p class="explain">Go back to <a href="README.html">GitHub Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

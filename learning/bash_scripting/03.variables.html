@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="bash-scripting-guide:-variables-and-data-types" class="guides-h1"> Bash Scripting Guide: Variables and Data Types </h1>
+
+<p class="explain">In Bash scripting, variables are used to store and manipulate data. Understanding data types and proper variable usage is fundamental to writing effective scripts.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-variables">Variables</a> </li>
+    <ol>
+        <li class="explain"> <a href="#11-declaring-variables">Declaring Variables</a> </li>
+        <li class="explain"> <a href="#12-accessing-variables">Accessing Variables</a> </li>
+    </ol>
+    <li class="explain"> <a href="#2-data-types">Data Types</a> </li>
+    <ol>
+        <li class="explain"> <a href="#21-strings">Strings</a> </li>
+        <li class="explain"> <a href="#22-integers">Integers</a> </li>
+        <li class="explain"> <a href="#23-arrays">Arrays</a> </li>
+    </ol>
+    <li class="explain"> <a href="#3-special-variables">Special Variables</a> </li>
+    <li class="explain"> <a href="#4-examples">Examples</a> </li>
+    <ol>
+        <li class="explain"> <a href="#41-basic-variable-usage">Basic Variable Usage</a> </li>
+        <li class="explain"> <a href="#42-arithmetic-operations">Arithmetic Operations</a> </li>
+        <li class="explain"> <a href="#43-array-example">Array Example</a> </li>
+    </ol>
+</ol>
+<h2 id="1-variables" class="guides-h2"> 1 Variables </h2>
+
+<h3 id="11-declaring-variables" class="guides-h3"> 1.1 Declaring Variables </h3>
+
+<p class="explain">Variables in Bash are created without explicit data types. Follow these conventions:</p>
+
+<pre class="language-bash">
+<code>
+# Variable declaration and assignment
+variable_name="value"
+</code>
+</pre>
+
+<ul>
+    <li class="explain"> Variable names are case-sensitive. </li>
+    <li class="explain"> Use descriptive names (e.g., <code>user_name</code>). </li>
+</ul>
+<h3 id="12-accessing-variables" class="guides-h3"> 1.2 Accessing Variables </h3>
+
+<p class="explain">To access the value of a variable, prefix it with a <code>$</code> symbol:</p>
+
+<pre class="language-bash">
+<code>
+echo $variable_name
+</code>
+</pre>
+
+<h2 id="2-data-types" class="guides-h2"> 2 Data Types </h2>
+
+<p class="explain">Bash primarily supports three data types: strings, integers, and arrays.</p>
+
+<h3 id="21-strings" class="guides-h3"> 2.1 Strings </h3>
+
+<p class="explain">Strings are sequences of characters. Use single or double quotes for string assignment:</p>
+
+<pre class="language-bash">
+<code>
+name='John'
+greeting="Hello, $name!"
+</code>
+</pre>
+
+<h3 id="22-integers" class="guides-h3"> 2.2 Integers </h3>
+
+<p class="explain">Bash treats all variables as strings by default. To perform arithmetic operations, use the <code>(( ))</code> construct:</p>
+
+<pre class="language-bash">
+<code>
+num1=5
+num2=3
+
+result=$((num1 + num2))
+echo "Sum: $result"
+</code>
+</pre>
+
+<h3 id="23-arrays" class="guides-h3"> 2.3 Arrays </h3>
+
+<p class="explain">Arrays store multiple values under a single variable. Declare an array using parentheses:</p>
+
+<pre class="language-bash">
+<code>
+fruits=("Apple" "Banana" "Orange")
+
+# Accessing array elements
+echo "First fruit: ${fruits[0]}"
+</code>
+</pre>
+
+<ul>
+    <li class="explain"> Arrays are zero-indexed. </li>
+</ul>
+<h2 id="3-special-variables" class="guides-h2"> 3 Special Variables </h2>
+
+<p class="explain">Bash provides special variables for various purposes:</p>
+
+<ul>
+    <li class="explain"> <code>$0</code>: Script name </li>
+    <li class="explain"> <code>$1</code>, <code>$2</code>, ...: Positional parameters </li>
+    <li class="explain"> <code>$#</code>: Number of parameters </li>
+    <li class="explain"> <code>$@</code>: All positional parameters </li>
+    <li class="explain"> <code>$?</code>: Exit status of the last command </li>
+</ul>
+<h2 id="4-examples" class="guides-h2"> 4 Examples </h2>
+
+<h3 id="41-basic-variable-usage" class="guides-h3"> 4.1 Basic Variable Usage </h3>
+
+<pre class="language-bash">
+<code>
+# Basic variable usage
+name="Alice"
+echo "Hello, $name!"
+</code>
+</pre>
+
+<h3 id="42-arithmetic-operations" class="guides-h3"> 4.2 Arithmetic Operations </h3>
+
+<pre class="language-bash">
+<code>
+# Arithmetic operations
+num1=8
+num2=4
+
+result=$((num1 / num2))
+echo "Result: $result"
+</code>
+</pre>
+
+<h3 id="43-array-example" class="guides-h3"> 4.3 Array Example </h3>
+
+<pre class="language-bash">
+<code>
+# Array example
+colors=("Red" "Green" "Blue")
+
+# Loop through array elements
+for color in "${colors[@]}"; do
+    echo "Color: $color"
+done
+</code>
+</pre>
+
+<hr>
+<p class="explain">Continue to <a href="04.control_structures.html">Part 4: Control Structures</a>.</p>
+
+<p class="explain">Go back to <a href="README.html">Bash Scripting Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

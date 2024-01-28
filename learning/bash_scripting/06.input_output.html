@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="bash-scripting-guide---input/output" class="guides-h1"> Bash Scripting Guide - Input/Output </h1>
+
+<p class="explain">This section covers handling input and output in Bash scripts.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-reading-user-input">Reading User Input</a> </li>
+    <ol>
+        <li class="explain"> <a href="#11-basic-read-command">Basic <code>read</code> command</a> </li>
+        <li class="explain"> <a href="#12-input-validation">Input Validation</a> </li>
+    </ol>
+    <li class="explain"> <a href="#2-output-to-screen-and-files">Output to Screen and Files</a> </li>
+    <ol>
+        <li class="explain"> <a href="#21-echo-command"><code>echo</code> Command</a> </li>
+        <li class="explain"> <a href="#22-formatting-with-printf">formatting with <code>printf</code></a> </li>
+        <li class="explain"> <a href="#23-redirecting-output">Redirecting Output</a> </li>
+        <li class="explain"> <a href="#24-reading-from-files">Reading from Files</a> </li>
+        <li class="explain"> <a href="#25-piping-output">Piping Output</a> </li>
+    </ol>
+</ol>
+<h2 id="1-reading-user-input" class="guides-h2"> 1. Reading User Input </h2>
+
+<p class="explain">In Bash scripting, reading user input is a common task, especially for interactive scripts. The <code>read</code> command is used for this purpose.</p>
+
+<h3 id="11-basic-read-command" class="guides-h3"> 1.1 Basic <code>read</code> Command </h3>
+
+<p class="explain">The basic syntax of the <code>read</code> command is as follows:</p>
+
+<pre class="language-bash">
+<code>
+read -p "Enter your name: " username
+echo "Hello, $username!"
+</code>
+</pre>
+
+<ul>
+    <li class="explain"> <code>-p</code>: Specifies a prompt to display. </li>
+    <li class="explain"> <code>username</code>: Variable to store the user input. </li>
+</ul>
+<h3 id="12-input-validation" class="guides-h3"> 1.2 Input Validation </h3>
+
+<p class="explain">Performing basic input validation to ensure the entered data meets specific criteria:</p>
+
+<pre class="language-bash">
+<code>
+read -p "Enter your age: " age
+
+if [[ "$age" =~ ^[0-9]+$ ]]; then
+  echo "You entered a valid age: $age"
+else
+  echo "Invalid input. Please enter a numeric value."
+fi
+</code>
+</pre>
+
+<h2 id="2-output-to-screen-and-files" class="guides-h2"> 2. Output to Screen and Files </h2>
+
+<p class="explain">Bash provides various commands to display output on the screen and redirect it to files.</p>
+
+<h3 id="21-echo-command" class="guides-h3"> 2.1 <code>echo</code> Command </h3>
+
+<p class="explain">The <code>echo</code> command is used to print text to the screen:</p>
+
+<pre class="language-bash">
+<code>
+echo "Hello, World!"
+</code>
+</pre>
+
+<h3 id="22-formatting-with-printf" class="guides-h3"> 2.2 Formatting with <code>printf</code> </h3>
+
+<p class="explain">The <code>printf</code> command allows for more advanced formatting:</p>
+
+<pre class="language-bash">
+<code>
+name="John"
+age=25
+printf "Name: %s\nAge: %d\n" "$name" "$age"
+</code>
+</pre>
+
+<h3 id="23-redirecting-output" class="guides-h3"> 2.3 Redirecting Output </h3>
+
+<p class="explain">Redirecting output to files using <code>></code> (overwrite) and <code>>></code> (append):</p>
+
+<pre class="language-bash">
+<code>
+echo "This is a line of text" > output.txt
+echo "This is another line" >> output.txt
+</code>
+</pre>
+
+<h3 id="24-reading-from-files" class="guides-h3"> 2.4 Reading from Files </h3>
+
+<p class="explain">Reading and displaying the contents of a file:</p>
+
+<pre class="language-bash">
+<code>
+file_contents=$(&#60filename.txt)
+echo "$file_contents"
+</code>
+</pre>
+
+<h3 id="25-piping-output" class="guides-h3"> 2.5 Piping Output </h3>
+
+<p class="explain">Piping output from one command to another:</p>
+
+<pre class="language-bash">
+<code>
+ls -l | grep ".txt"
+</code>
+</pre>
+
+<hr>
+<p class="explain">Continue to <a href="07.file_operations.html">Part 7: File Operations</a>.</p>
+
+<p class="explain">Go back to <a href="README.html">Bash Scripting Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

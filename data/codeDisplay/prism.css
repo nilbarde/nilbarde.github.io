@@ -18,7 +18,7 @@ pre[class*="language-"] {
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
-	line-height: 1.5;
+	line-height: 1.2;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -51,8 +51,8 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
+	padding: 0 32px;
+	margin: 0 0;
 	overflow: auto;
 }
 

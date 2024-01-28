@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="basic-git-commands-guide" class="guides-h1"> Basic Git Commands Guide </h1>
+
+<p class="explain">This guide provides a quick reference for basic Git commands on Ubuntu. Git is a powerful version control system widely used for collaborative development.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-setting-up-git">Setting Up Git</a> </li>
+    <li class="explain"> <a href="#2-cloning-a-repository">Cloning a Repository</a> </li>
+    <li class="explain"> <a href="#3-checking-repository-status">Checking Repository Status</a> </li>
+    <li class="explain"> <a href="#4-making-changes">Making Changes</a> </li>
+    <li class="explain"> <a href="#5-committing-changes">Committing Changes</a> </li>
+    <li class="explain"> <a href="#6-branching">Branching</a> </li>
+    <li class="explain"> <a href="#7-merging">Merging</a> </li>
+    <li class="explain"> <a href="#8-pushing-changes">Pushing Changes</a> </li>
+    <li class="explain"> <a href="#9-pulling-changes">Pulling Changes</a> </li>
+    <li class="explain"> <a href="#10-viewing-commit-history">Viewing Commit History</a> </li>
+</ol>
+<h2 id="1-setting-up-git" class="guides-h2"> 1. Setting Up Git </h2>
+
+<p class="explain">Install Git on Ubuntu:</p>
+
+<pre class="language-bash">
+<code>
+sudo apt update
+sudo apt install git
+</code>
+</pre>
+
+<p class="explain">Configure your name and email:</p>
+
+<pre class="language-bash">
+<code>
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+</code>
+</pre>
+
+<h2 id="2-cloning-a-repository" class="guides-h2"> 2. Cloning a Repository </h2>
+
+<p class="explain">Clone a remote repository to your local machine:</p>
+
+<pre class="language-bash">
+<code>
+git clone https://github.com/username/repository.git
+</code>
+</pre>
+
+<h2 id="3-checking-repository-status" class="guides-h2"> 3. Checking Repository Status </h2>
+
+<p class="explain">Check the status of your local repository:</p>
+
+<pre class="language-bash">
+<code>
+git status
+</code>
+</pre>
+
+<h2 id="4-making-changes" class="guides-h2"> 4. Making Changes </h2>
+
+<p class="explain">Create or modify files in your working directory.</p>
+
+<h2 id="5-committing-changes" class="guides-h2"> 5. Committing Changes </h2>
+
+<p class="explain">Stage changes for commit:</p>
+
+<pre class="language-bash">
+<code>
+git add filename
+</code>
+</pre>
+
+<p class="explain">Commit changes with a descriptive message:</p>
+
+<pre class="language-bash">
+<code>
+git commit -m "Your commit message"
+</code>
+</pre>
+
+<h2 id="6-branching" class="guides-h2"> 6. Branching </h2>
+
+<p class="explain">Create a new branch:</p>
+
+<pre class="language-bash">
+<code>
+git branch new-branch
+</code>
+</pre>
+
+<p class="explain">Switch to the new branch:</p>
+
+<pre class="language-bash">
+<code>
+git checkout new-branch
+</code>
+</pre>
+
+<h2 id="7-merging" class="guides-h2"> 7. Merging </h2>
+
+<p class="explain">Merge changes from one branch into another:</p>
+
+<pre class="language-bash">
+<code>
+git checkout target-branch
+git merge source-branch
+</code>
+</pre>
+
+<h2 id="8-pushing-changes" class="guides-h2"> 8. Pushing Changes </h2>
+
+<p class="explain">Push changes to a remote repository:</p>
+
+<pre class="language-bash">
+<code>
+git push origin branch-name
+</code>
+</pre>
+
+<h2 id="9-pulling-changes" class="guides-h2"> 9. Pulling Changes </h2>
+
+<p class="explain">Pull changes from a remote repository:</p>
+
+<pre class="language-bash">
+<code>
+git pull origin branch-name
+</code>
+</pre>
+
+<h2 id="10-viewing-commit-history" class="guides-h2"> 10. Viewing Commit History </h2>
+
+<p class="explain">View commit history:</p>
+
+<pre class="language-bash">
+<code>
+git log
+</code>
+</pre>
+
+<p class="explain">These are some basic Git commands to get you started. Explore more Git functionalities as you continue with your development projects.</p>
+
+<hr>
+
+<p class="explain">Go back to <a href="README.html">GitHub Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

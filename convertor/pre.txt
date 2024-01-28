@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{css_folder}}data/styles.css">
+    <link rel="stylesheet" href="{{css_folder}}data/guides.css">
+    <link rel="stylesheet" href="{{css_folder}}data/codeDisplay/prism.css">
+    <script defer src="{{css_folder}}data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="{{css_folder}}data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="{{css_folder}}index.html">
+                <img src="{{css_folder}}data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="{{css_folder}}aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="{{css_folder}}career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="{{css_folder}}learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="{{css_folder}}/data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>

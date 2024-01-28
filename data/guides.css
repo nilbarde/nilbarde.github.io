@@ -1,0 +1,57 @@
+.white-back {
+    background-color: rgba(255, 255, 255, 0.75);
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* 100% of the viewport height */
+    position: relative;
+    display: contents;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #000000; /* Text color on top of the overlay */
+    z-index: -2;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.guide-inside {
+    margin-left: 22%;
+    margin-right: 22%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.guides-h1 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 3.0em;
+    color: #232323;
+    font-style: normal;
+    line-height: 1.2;
+}
+
+.guides-h2 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 2.2em;
+    color: #232323;
+    font-style: normal;
+    line-height: 1.2;
+}
+
+.guides-h3 {
+    padding-top: 2.4px;
+    padding-bottom: 2.4px;
+    font-size: 1.6em;
+    color: #232323;
+    font-style: normal;
+    line-height: 1.2;
+}
+
+.explain {
+    line-height: 1.5;
+    font-size: 1.2rem;
+    font-style: normal;
+    text-align: justify;
+    text-justify: inter-word;
+}
