@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="dockerfile-basics-guide" class="guides-h1"> Dockerfile Basics Guide </h1>
+
+<p class="explain">This guide provides a quick reference for creating Dockerfiles, which are used to define the configuration and dependencies for building Docker images.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-understanding-dockerfile">Understanding Dockerfile</a> </li>
+    <li class="explain"> <a href="#2-basic-structure">Basic Structure</a> </li>
+    <li class="explain"> <a href="#3-common-instructions">Common Instructions</a> </li>
+    <li class="explain"> <a href="#4-building-and-running-docker-image">Building and Running Docker Image</a> </li>
+    <li class="explain"> <a href="#5-best-practices">Best Practices</a> </li>
+</ol>
+<h2 id="1-understanding-dockerfile" class="guides-h2"> 1. Understanding Dockerfile </h2>
+
+<p class="explain">A Dockerfile is a text document containing a set of instructions that Docker uses to create a Docker image. It defines the base image, sets up the environment, and specifies the commands to run within the container.</p>
+
+<h2 id="2-basic-structure" class="guides-h2"> 2. Basic Structure </h2>
+
+<p class="explain">A simple Dockerfile typically consists of the following elements:</p>
+
+<pre class="language-Dockerfile">
+<code>
+# Use an official base image
+FROM ubuntu:latest
+
+# Set the working directory
+WORKDIR /app
+
+# Copy application files into the container
+COPY . .
+
+# Install dependencies
+RUN apt-get update && apt-get install -y python3
+
+# Define the default command to run when the container starts
+CMD ["python3", "app.py"]
+</code>
+</pre>
+
+<ul>
+    <li class="explain"> <code>FROM</code>: Specifies the base image. </li>
+    <li class="explain"> <code>WORKDIR</code>: Sets the working directory inside the container. </li>
+    <li class="explain"> <code>COPY</code>: Copies files from the local machine to the container. </li>
+    <li class="explain"> <code>RUN</code>: Executes commands during image build. </li>
+    <li class="explain"> <code>CMD</code> or <code>ENTRYPOINT</code>: Specifies the default command to run when the container starts. </li>
+</ul>
+<h2 id="3-common-instructions" class="guides-h2"> 3. Common Instructions </h2>
+
+<h3 id="31-from" class="guides-h3"> 3.1. <strong>FROM</strong> </h3>
+
+<pre class="language-Dockerfile">
+<code>
+FROM ubuntu:latest
+</code>
+</pre>
+
+<p class="explain">Specifies the base image for the Docker image.</p>
+
+<h3 id="32-workdir" class="guides-h3"> 3.2. <strong>WORKDIR</strong> </h3>
+
+<pre class="language-Dockerfile">
+<code>
+WORKDIR /app
+</code>
+</pre>
+
+<p class="explain">Sets the working directory inside the container.</p>
+
+<h3 id="33-copy" class="guides-h3"> 3.3. <strong>COPY</strong> </h3>
+
+<pre class="language-Dockerfile">
+<code>
+COPY . .
+</code>
+</pre>
+
+<p class="explain">Copies files from the local machine to the container.</p>
+
+<h3 id="34-run" class="guides-h3"> 3.4. <strong>RUN</strong> </h3>
+
+<pre class="language-Dockerfile">
+<code>
+RUN apt-get update && apt-get install -y python3
+</code>
+</pre>
+
+<p class="explain">Executes commands during image build.</p>
+
+<h3 id="35-cmd-or-entrypoint" class="guides-h3"> 3.5. <strong>CMD</strong> or <strong>ENTRYPOINT</strong> </h3>
+
+<pre class="language-Dockerfile">
+<code>
+CMD ["python3", "app.py"]
+</code>
+</pre>
+
+<p class="explain">Specifies the default command to run when the container starts.</p>
+
+<h2 id="4-building-and-running-docker-image" class="guides-h2"> 4. Building and Running Docker Image </h2>
+
+<p class="explain">Build the Docker image from the Dockerfile:</p>
+
+<pre class="language-bash">
+<code>
+docker build -t my-app-image .
+</code>
+</pre>
+
+<p class="explain">Run a container from the built image:</p>
+
+<pre class="language-bash">
+<code>
+docker run my-app-image
+</code>
+</pre>
+
+<h2 id="5-best-practices" class="guides-h2"> 5. Best Practices </h2>
+
+<ul>
+    <li class="explain"> Keep images small by using a minimal base image. </li>
+    <li class="explain"> Combine commands to minimize layers. </li>
+    <li class="explain"> Leverage caching for efficiency. </li>
+    <li class="explain"> Avoid installing unnecessary dependencies. </li>
+    <li class="explain"> Use a <code>.dockerignore</code> file to exclude unnecessary files during the build. </li>
+</ul>
+<hr>
+
+<p class="explain">Go back to <a href="README.html">Docker Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

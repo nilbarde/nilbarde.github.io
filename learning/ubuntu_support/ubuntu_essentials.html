@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="essential-ubuntu-commands-guide" class="guides-h1"> Essential Ubuntu Commands Guide </h1>
+
+<p class="explain">This guide provides a quick reference for essential Ubuntu commands. These commands cover basic system management, file operations, package management, and more.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-navigating-the-file-system">Navigating the File System</a> </li>
+    <li class="explain"> <a href="#2-working-with-files-and-directories">Working with Files and Directories</a> </li>
+    <li class="explain"> <a href="#3-user-and-permissions">User and Permissions</a> </li>
+    <li class="explain"> <a href="#4-package-management">Package Management</a> </li>
+    <li class="explain"> <a href="#5-system-information">System Information</a> </li>
+    <li class="explain"> <a href="#6-network-commands">Network Commands</a> </li>
+    <li class="explain"> <a href="#7-processes-management">Processes Management</a> </li>
+    <li class="explain"> <a href="#8-system-updates-and-upgrades">System Updates and Upgrades</a> </li>
+    <li class="explain"> <a href="#9-miscellaneous">Miscellaneous</a> </li>
+</ol>
+<h2 id="1-navigating-the-file-system" class="guides-h2"> 1. Navigating the File System </h2>
+
+<ul>
+    <li class="explain"> <strong><code>pwd</code></strong>: Print the current working directory. </li>
+    <li class="explain"> <strong><code>ls</code></strong>: List files and directories. </li>
+    <li class="explain"> <strong><code>cd</code></strong>: Change directory. </li>
+    <li class="explain"> <strong><code>mkdir</code></strong>: Create a new directory. </li>
+    <li class="explain"> <strong><code>rmdir</code></strong>: Remove an empty directory. </li>
+    <li class="explain"> <strong><code>cp</code></strong>: Copy files or directories. </li>
+    <li class="explain"> <strong><code>mv</code></strong>: Move or rename files or directories. </li>
+    <li class="explain"> <strong><code>rm</code></strong>: Remove files or directories. </li>
+</ul>
+<h2 id="2-working-with-files-and-directories" class="guides-h2"> 2. Working with Files and Directories </h2>
+
+<ul>
+    <li class="explain"> <strong><code>touch</code></strong>: Create an empty file. </li>
+    <li class="explain"> <strong><code>cat</code></strong>: Concatenate and display the content of a file. </li>
+    <li class="explain"> <strong><code>nano</code></strong>: Text editor for modifying files. </li>
+    <li class="explain"> <strong><code>head</code></strong>: Display the first lines of a file. </li>
+    <li class="explain"> <strong><code>tail</code></strong>: Display the last lines of a file. </li>
+    <li class="explain"> <strong><code>chmod</code></strong>: Change file permissions. </li>
+    <li class="explain"> <strong><code>chown</code></strong>: Change file owner. </li>
+</ul>
+<h2 id="3-user-and-permissions" class="guides-h2"> 3. User and Permissions </h2>
+
+<ul>
+    <li class="explain"> <strong><code>whoami</code></strong>: Display the current logged-in user. </li>
+    <li class="explain"> <strong><code>sudo</code></strong>: Execute a command with superuser privileges. </li>
+    <li class="explain"> <strong><code>passwd</code></strong>: Change user password. </li>
+    <li class="explain"> <strong><code>su</code></strong>: Switch user. </li>
+</ul>
+<h2 id="4-package-management" class="guides-h2"> 4. Package Management </h2>
+
+<ul>
+    <li class="explain"> <strong><code>apt</code></strong>: Advanced Package Tool for package management. </li>
+    <ul>
+        <li class="explain"> <strong><code>apt update</code></strong>: Update package lists. </li>
+        <li class="explain"> <strong><code>apt upgrade</code></strong>: Upgrade installed packages. </li>
+        <li class="explain"> <strong><code>apt install</code></strong>: Install new packages. </li>
+        <li class="explain"> <strong><code>apt remove</code></strong>: Remove packages. </li>
+        <li class="explain"> <strong><code>apt search</code></strong>: Search for packages. </li>
+    </ul>
+</ul>
+<h2 id="5-system-information" class="guides-h2"> 5. System Information </h2>
+
+<ul>
+    <li class="explain"> <strong><code>uname</code></strong>: Display system information. </li>
+    <li class="explain"> <strong><code>lsb_release</code></strong>: Display Ubuntu release information. </li>
+    <li class="explain"> <strong><code>df</code></strong>: Display disk space usage. </li>
+    <li class="explain"> <strong><code>free</code></strong>: Display memory usage. </li>
+</ul>
+<h2 id="6-network-commands" class="guides-h2"> 6. Network Commands </h2>
+
+<ul>
+    <li class="explain"> <strong><code>ifconfig</code></strong>: Display network interface information. </li>
+    <li class="explain"> <strong><code>ping</code></strong>: Test network connectivity. </li>
+    <li class="explain"> <strong><code>nslookup</code></strong>: Query DNS servers. </li>
+    <li class="explain"> <strong><code>netstat</code></strong>: Display network statistics. </li>
+</ul>
+<h2 id="7-processes-management" class="guides-h2"> 7. Processes Management </h2>
+
+<ul>
+    <li class="explain"> <strong><code>ps</code></strong>: Display information about active processes. </li>
+    <li class="explain"> <strong><code>kill</code></strong>: Terminate a process. </li>
+    <li class="explain"> <strong><code>top</code></strong>: Display dynamic real-time system statistics. </li>
+</ul>
+<h2 id="8-system-updates-and-upgrades" class="guides-h2"> 8. System Updates and Upgrades </h2>
+
+<ul>
+    <li class="explain"> <strong><code>apt update</code></strong>: Update package lists. </li>
+    <li class="explain"> <strong><code>apt upgrade</code></strong>: Upgrade installed packages. </li>
+    <li class="explain"> <strong><code>apt dist-upgrade</code></strong>: Upgrade the distribution. </li>
+    <li class="explain"> <strong><code>do-release-upgrade</code></strong>: Upgrade to a new Ubuntu release. </li>
+</ul>
+<h2 id="9-miscellaneous" class="guides-h2"> 9. Miscellaneous </h2>
+
+<ul>
+    <li class="explain"> <strong><code>history</code></strong>: Display command history. </li>
+    <li class="explain"> <strong><code>echo</code></strong>: Display a message. </li>
+    <li class="explain"> <strong><code>date</code></strong>: Display the current date and time. </li>
+    <li class="explain"> <strong><code>shutdown</code></strong>: Shut down the system. </li>
+    <li class="explain"> <strong><code>reboot</code></strong>: Restart the system. </li>
+</ul>
+<p class="explain">These commands cover a range of basic operations for managing your Ubuntu system. Explore and use them according to your needs.</p>
+
+<hr>
+
+<p class="explain">Go back to <a href="README.html">Ubuntu Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

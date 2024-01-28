@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="creating-and-using-python-virtual-environment-guide" class="guides-h1"> Creating and Using Python Virtual Environment Guide </h1>
+
+<p class="explain">This guide provides step-by-step instructions for creating and using Python virtual environments on Ubuntu. Virtual environments are useful for isolating Python projects and managing dependencies.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-installing-python">Installing Python</a> </li>
+    <li class="explain"> <a href="#2-installing-venv-module">Installing <code>venv</code> Module</a> </li>
+    <li class="explain"> <a href="#3-creating-a-virtual-environment">Creating a Virtual Environment</a> </li>
+    <li class="explain"> <a href="#4-activating-the-virtual-environment">Activating the Virtual Environment</a> </li>
+    <li class="explain"> <a href="#5-deactivating-the-virtual-environment">Deactivating the Virtual Environment</a> </li>
+    <li class="explain"> <a href="#6-installing-packages-in-the-virtual-environment">Installing Packages in the Virtual Environment</a> </li>
+    <li class="explain"> <a href="#7-listing-installed-packages">Listing Installed Packages</a> </li>
+    <li class="explain"> <a href="#8-using-the-virtual-environment-in-a-script">Using the Virtual Environment in a Script</a> </li>
+</ol>
+<h2 id="1-installing-python" class="guides-h2"> 1. Installing Python </h2>
+
+<p class="explain">Ensure Python is installed on your system. If not, install it using:</p>
+
+<pre class="language-bash">
+<code>
+sudo apt update
+sudo apt install python3
+</code>
+</pre>
+
+<h2 id="2-installing-venv-module" class="guides-h2"> 2. Installing <code>venv</code> Module </h2>
+
+<p class="explain">Check if the <code>venv</code> module is installed:</p>
+
+<pre class="language-bash">
+<code>
+python3 -m venv --help
+</code>
+</pre>
+
+<p class="explain">If not installed, install it:</p>
+
+<pre class="language-bash">
+<code>
+sudo apt install python3-venv
+</code>
+</pre>
+
+<h2 id="3-creating-a-virtual-environment" class="guides-h2"> 3. Creating a Virtual Environment </h2>
+
+<p class="explain">Navigate to your project directory and create a virtual environment:</p>
+
+<pre class="language-bash">
+<code>
+python3 -m venv venv_workspace
+</code>
+</pre>
+
+<p class="explain">This command creates a virtual environment named <code>venv_workspace</code> in your project directory.</p>
+
+<h2 id="4-activating-the-virtual-environment" class="guides-h2"> 4. Activating the Virtual Environment </h2>
+
+<p class="explain">Activate the virtual environment:</p>
+
+<pre class="language-bash">
+<code>
+source venv_workspace/bin/activate
+</code>
+</pre>
+
+<p class="explain">Your terminal prompt will change, indicating the virtual environment is active.</p>
+
+<h2 id="5-deactivating-the-virtual-environment" class="guides-h2"> 5. Deactivating the Virtual Environment </h2>
+
+<p class="explain">To deactivate the virtual environment, simply run:</p>
+
+<pre class="language-bash">
+<code>
+deactivate
+</code>
+</pre>
+
+<p class="explain">Your prompt will return to the original state.</p>
+
+<h2 id="6-installing-packages-in-the-virtual-environment" class="guides-h2"> 6. Installing Packages in the Virtual Environment </h2>
+
+<p class="explain">While the virtual environment is active, use <code>pip</code> to install packages:</p>
+
+<pre class="language-bash">
+<code>
+pip install package_name
+</code>
+</pre>
+
+<h2 id="7-listing-installed-packages" class="guides-h2"> 7. Listing Installed Packages </h2>
+
+<p class="explain">List installed packages in the virtual environment:</p>
+
+<pre class="language-bash">
+<code>
+pip list
+</code>
+</pre>
+
+<h2 id="8-using-the-virtual-environment-in-a-script" class="guides-h2"> 8. Using the Virtual Environment in a Script </h2>
+
+<p class="explain">To use the virtual environment in a script, add the following line at the beginning of your script:</p>
+
+<pre class="language-python">
+<code>
+#!/path/to/venv_workspace/bin/python
+</code>
+</pre>
+
+<p class="explain">This ensures the script uses the Python interpreter from the virtual environment.</p>
+
+<hr>
+
+<p class="explain">Go back to <a href="README.html">Python Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

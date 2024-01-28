@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="bash-scripting-guide:-first-script" class="guides-h1"> Bash Scripting Guide: First Script </h1>
+
+<p class="explain">In this section, we will guide you through the process of creating your first Bash script. This is an essential step to get hands-on experience with Bash scripting.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-creating-a-bash-script">Creating a Bash Script</a> </li>
+    <ol>
+        <li class="explain"> <a href="#11-text-editors-for-scripting">Text Editors for Scripting</a> </li>
+        <li class="explain"> <a href="#12-creating-and-saving-your-first-script">Creating and Saving Your First Script</a> </li>
+    </ol>
+    <li class="explain"> <a href="#2-running-a-bash-script">Running a Bash Script</a> </li>
+    <ol>
+        <li class="explain"> <a href="#21-creating-executable">Creating Executable</a> </li>
+        <li class="explain"> <a href="#22-running-scripts">Running Scripts</a> </li>
+    </ol>
+</ol>
+<h2 id="1-creating-a-bash-script" class="guides-h2"> 1 Creating a Bash Script </h2>
+
+<h3 id="11-text-editors-for-scripting" class="guides-h3"> 1.1 Text Editors for Scripting </h3>
+
+<p class="explain">Before creating a Bash script, choose a text editor for scripting. Common choices include <code>nano</code>, <code>vim</code>, or any text editor of your preference.</p>
+
+<p class="explain">For example, using <code>nano</code>:</p>
+
+<pre class="language-bash">
+<code>
+nano myscript.sh
+</code>
+</pre>
+
+<h3 id="12-creating-and-saving-your-first-script" class="guides-h3"> 1.2 Creating and Saving Your First Script </h3>
+
+<p class="explain">Inside the text editor, add the following lines to create a simple script:</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+echo "Hello, Bash Scripting!"
+</code>
+</pre>
+
+<ul>
+    <li class="explain"> The first line (<code>#!/bin/bash</code>) is called a shebang and indicates the path to the Bash interpreter. </li>
+    <li class="explain"> The second line (<code>echo "Hello, Bash Scripting!"</code>) prints a message to the console. </li>
+</ul>
+<p class="explain">Save the file and exit the text editor.</p>
+
+<h2 id="2-running-a-bash-script" class="guides-h2"> 2 Running a Bash Script </h2>
+
+<h3 id="21-creating-executable" class="guides-h3"> 2.1 Creating Executable </h3>
+
+<p class="explain">Make the script executable using the <code>chmod</code> command:</p>
+
+<pre class="language-bash">
+<code>
+chmod +x myscript.sh
+</code>
+</pre>
+
+<h3 id="22-running-scripts" class="guides-h3"> 2.2 Running Scripts </h3>
+
+<pre class="language-bash">
+<code>
+$ ./myscript.sh
+Hello, Bash Scripting!
+</code>
+</pre>
+
+<p class="explain">If you want to run a script without making it executable, use the <code>bash</code> command:</p>
+
+<pre class="language-bash">
+<code>
+bash myscript.sh
+</code>
+</pre>
+
+<p class="explain">This allows you to run the script without changing its permission.</p>
+
+<hr>
+<p class="explain">Continue to <a href="03.variables.html">Part 3: Variables and Data Types</a>.</p>
+
+<p class="explain">Go back to <a href="README.html">Bash Scripting Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="bash-scripting-guide:-functions" class="guides-h1"> Bash Scripting Guide: Functions </h1>
+
+<p class="explain">This section covers the creation and usage of functions in Bash scripts.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-introduction-to-functions">Introduction to Functions</a> </li>
+    <li class="explain"> <a href="#2-defining-functions">Defining Functions</a> </li>
+    <ol>
+        <li class="explain"> <a href="#21-basic-syntax">Basic Syntax</a> </li>
+        <li class="explain"> <a href="#22-function-arguments">Function Arguments</a> </li>
+        <li class="explain"> <a href="#23-return-values">Return Values</a> </li>
+    </ol>
+    <li class="explain"> <a href="#3-calling-functions">Calling Functions</a> </li>
+    <li class="explain"> <a href="#4-scope-and-variables">Scope and Variables</a> </li>
+    <ol>
+        <li class="explain"> <a href="#41-local-variables">Local Variables</a> </li>
+        <li class="explain"> <a href="#42-global-variables">Global Variables</a> </li>
+    </ol>
+    <li class="explain"> <a href="#5-examples">Examples</a> </li>
+    <li class="explain"> <a href="#6-best-practices">Best Practices</a> </li>
+</ol>
+<h2 id="1-introduction-to-functions" class="guides-h2"> 1. Introduction to Functions </h2>
+
+<p class="explain">In Bash scripting, functions allow you to group code into reusable blocks. They enhance code readability and maintainability.</p>
+
+<h2 id="2-defining-functions" class="guides-h2"> 2. Defining Functions </h2>
+
+<h3 id="21-basic-syntax" class="guides-h3"> 2.1 Basic Syntax </h3>
+
+<p class="explain">To declare a function, use the following syntax:</p>
+
+<pre class="language-bash">
+<code>
+function_name() {
+    # function body
+    echo "Hello, I am a function!"
+}
+</code>
+</pre>
+
+<h3 id="22-function-arguments" class="guides-h3"> 2.2 Function Arguments </h3>
+
+<p class="explain">Functions can accept arguments:</p>
+
+<pre class="language-bash">
+<code>
+greet_user() {
+    echo "Hello, $1!"
+}
+
+# Call the function with an argument
+greet_user "John"
+</code>
+</pre>
+
+<h3 id="23-return-values" class="guides-h3"> 2.3 Return Values </h3>
+
+<p class="explain">Bash functions can return values using <code>return</code>:</p>
+
+<pre class="language-bash">
+<code>
+add_numbers() {
+    local result=$(( $1 + $2 ))
+    return $result
+}
+
+# Call the function and capture the result
+add_numbers 5 3
+sum=$?
+echo "The sum is: $sum"
+</code>
+</pre>
+
+<h2 id="3-calling-functions" class="guides-h2"> 3. Calling Functions </h2>
+
+<p class="explain">Call a function by using its name:</p>
+
+<pre class="language-bash">
+<code>
+function_name
+</code>
+</pre>
+
+<h2 id="4-scope-and-variables" class="guides-h2"> 4. Scope and Variables </h2>
+
+<h3 id="41-local-variables" class="guides-h3"> 4.1 Local Variables </h3>
+
+<p class="explain">Use <code>local</code> to declare variables with local scope:</p>
+
+<pre class="language-bash">
+<code>
+calculate_square() {
+    local squared=$(( $1 * $1 ))
+    echo $squared
+}
+</code>
+</pre>
+
+<h3 id="42-global-variables" class="guides-h3"> 4.2 Global Variables </h3>
+
+<p class="explain">Variables declared outside functions have global scope.</p>
+
+<pre class="language-bash">
+<code>
+global_var="I am global"
+
+print_global() {
+    echo $global_var
+}
+</code>
+</pre>
+
+<h2 id="5-examples" class="guides-h2"> 5. Examples </h2>
+
+<h3 id="51-simple-function" class="guides-h3"> 5.1 Simple Function </h3>
+
+<pre class="language-bash">
+<code>
+greet() {
+    echo "Hello, world!"
+}
+
+# Call the function
+greet
+</code>
+</pre>
+
+<h3 id="52-function-with-arguments" class="guides-h3"> 5.2 Function with Arguments </h3>
+
+<pre class="language-bash">
+<code>
+calculate_product() {
+    local product=$(( $1 * $2 ))
+    echo "The product is: $product"
+}
+
+# Call the function with arguments
+calculate_product 4 6
+</code>
+</pre>
+
+<h2 id="6-best-practices" class="guides-h2"> 6. Best Practices </h2>
+
+<ul>
+    <li class="explain"> Keep functions short and focused on a specific task. </li>
+    <li class="explain"> Use meaningful names for functions and variables. </li>
+    <li class="explain"> Document functions with comments to explain their purpose. </li>
+</ul>
+<hr>
+<p class="explain">Continue to <a href="06.input_output.html">Part 6: input Output</a>.</p>
+
+<p class="explain">Go back to <a href="README.html">Bash Scripting Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

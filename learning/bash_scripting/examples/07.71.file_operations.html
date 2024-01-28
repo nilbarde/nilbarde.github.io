@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../data/styles.css">
+    <link rel="stylesheet" href="../../../data/guides.css">
+    <link rel="stylesheet" href="../../../data/codeDisplay/prism.css">
+    <script defer src="../../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../../index.html">
+                <img src="../../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="bash-file-operations" class="guides-h1"> Bash file operations </h1>
+
+<p class="explain">Explore a simple Bash script showcasing fundamental file operations. </p>
+<p class="explain">This script can serve as a starting point for creating your own file-centric scripts.</p>
+
+<pre class="language-bash">
+<code>
+#!/bin/bash
+
+# Define variables
+source_file="example.txt"
+destination_folder="backup"
+
+# Check if the source file exists
+if [ -e "$source_file" ]; then
+    echo "Source file '$source_file' found."
+
+    # Check if the destination folder exists; if not, create it
+    if [ ! -d "$destination_folder" ]; then
+        mkdir "$destination_folder"
+        echo "Created destination folder '$destination_folder'."
+    fi
+
+    # Copy the source file to the destination folder
+    cp "$source_file" "$destination_folder/"
+    echo "File copied to '$destination_folder/'."
+
+else
+    echo "Source file '$source_file' not found. Exiting..."
+    exit 1
+fi
+
+# Display the contents of the destination folder
+echo -e "\nContents of '$destination_folder/':"
+ls "$destination_folder/"
+</code>
+</pre>
+
+<hr>
+
+<p class="explain">Return to <a href="../07.file_operations.html">Part 7: File Operations</a>.</p>
+
+<p class="explain">Continue to <a href="../08.advance_topics.html">Part 8: Advance Topics</a>.</p>
+
+<p class="explain">Go back to <a href="../README.html">Bash Scripting Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

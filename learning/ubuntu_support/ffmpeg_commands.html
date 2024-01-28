@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="comprehensive-ffmpeg-commands-guide" class="guides-h1"> Comprehensive FFmpeg Commands Guide </h1>
+
+<p class="explain">This guide covers a variety of FFmpeg commands for common multimedia tasks on Ubuntu.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-installing-ffmpeg">Installing FFmpeg</a> </li>
+    <li class="explain"> <a href="#2-converting-video-formats">Converting Video Formats</a> </li>
+    <li class="explain"> <a href="#3-trimming-or-cutting-video">Trimming or Cutting Video</a> </li>
+    <li class="explain"> <a href="#4-resizing-video">Resizing Video</a> </li>
+    <li class="explain"> <a href="#5-create-video-using-images">Create Video using Images</a> </li>
+    <li class="explain"> <a href="#6-record-video-using-url">Record Video using URL</a> </li>
+    <li class="explain"> <a href="#7-reducing-video-quality">Reducing Video Quality</a> </li>
+    <li class="explain"> <a href="#8-extract-images-using-video">Extract Images using Video</a> </li>
+    <li class="explain"> <a href="#9-overlay-video-on-black-screen">Overlay Video on Black Screen</a> </li>
+</ol>
+<h2 id="1-installing-ffmpeg" class="guides-h2"> 1. Installing FFmpeg </h2>
+
+<p class="explain">Install FFmpeg on Ubuntu:</p>
+
+<pre class="language-bash">
+<code>
+sudo apt update
+sudo apt install ffmpeg
+</code>
+</pre>
+
+<h2 id="2-converting-video-formats" class="guides-h2"> 2. Converting Video Formats </h2>
+
+<p class="explain">Convert a video file to another format:</p>
+
+<pre class="language-bash">
+<code>
+ffmpeg -i input.mp4 output.avi
+</code>
+</pre>
+
+<h2 id="3-trimming-or-cutting-video" class="guides-h2"> 3. Trimming or Cutting Video </h2>
+
+<p class="explain">Trim or cut a specific portion from a video:</p>
+
+<pre class="language-bash">
+<code>
+ffmpeg -i input.mp4 -ss 00:01:00 -to 00:02:30 -c copy output.mp4
+</code>
+</pre>
+
+<h2 id="4-resizing-video" class="guides-h2"> 4. Resizing Video </h2>
+
+<p class="explain">Resize a video to a specific resolution:</p>
+
+<pre class="language-bash">
+<code>
+ffmpeg -i input.mp4 -vf scale=640:480 output.mp4
+</code>
+</pre>
+
+<h2 id="5-create-video-using-images" class="guides-h2"> 5. Create Video using Images </h2>
+
+<p class="explain">Create a video from a sequence of images:</p>
+
+<pre class="language-bash">
+<code>
+ffmpeg -framerate 24 -pattern_type glob -i 'images/*.png' -c:v libx264 -pix_fmt yuv420p output.mp4
+</code>
+</pre>
+
+<h2 id="6-record-video-using-url" class="guides-h2"> 6. Record Video using URL </h2>
+
+<p class="explain">Record a video stream from a URL:</p>
+
+<pre class="language-bash">
+<code>
+ffmpeg -i http://example.com/stream.m3u8 -c copy output.mp4
+ffmpeg -i http://example.com/stream.m3u8 -rtsp_transport tcp -c copy -t 60 output.mp4
+</code>
+</pre>
+
+<h2 id="7-reducing-video-quality" class="guides-h2"> 7. Reducing Video Quality </h2>
+
+<p class="explain">Reduce video quality by setting a specific bitrate:</p>
+
+<pre class="language-bash">
+<code>
+ffmpeg -i input.mp4 -b:v 1M output.mp4
+ffmpeg -i input.mp4 -vf "scale=480:480" -vcodec libx264 -crf 30 output.mp4
+</code>
+</pre>
+
+<h2 id="8-extract-images-using-video" class="guides-h2"> 8. Extract Images using Video </h2>
+
+<p class="explain">Extract images at a specific interval from a video:</p>
+
+<pre class="language-bash">
+<code>
+ffmpeg -i input.mp4 image-%05d.jpg
+ffmpeg -i input.mp4 -vf fps=1/5 image-%03d.jpg
+</code>
+</pre>
+
+<h2 id="9-overlay-video-on-black-screen" class="guides-h2"> 9. Overlay Video on Black Screen </h2>
+
+<p class="explain">Overlay a video on a black screen:</p>
+
+<pre class="language-bash">
+<code>
+ffmpeg -i input.mp4 -vf "pad=width=1280:height=720:x=0:y=360" output.mp4
+</code>
+</pre>
+
+<hr>
+
+<p class="explain">Go back to <a href="README.html">Ubuntu Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="bash-scripting-guide---file-operations" class="guides-h1"> Bash Scripting Guide - File Operations </h1>
+
+<p class="explain">This guide covers essential file operations in Bash scripting, including reading and writing files, file testing, and manipulating file structures.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-introduction">Introduction</a> </li>
+    <li class="explain"> <a href="#2-file-testing">File Testing</a> </li>
+    <ul>
+        <li class="explain"> <a href="#21-checking-if-a-file-exists">Checking if a File Exists</a> </li>
+        <li class="explain"> <a href="#22-checking-if-a-file-is-readable">Checking if a File is Readable</a> </li>
+        <li class="explain"> <a href="#23-checking-if-a-file-is-writable">Checking if a File is Writable</a> </li>
+        <li class="explain"> <a href="#24-checking-if-a-file-is-executable">Checking if a File is Executable</a> </li>
+    </ul>
+    <li class="explain"> <a href="#3-reading-and-writing-files">Reading and Writing Files</a> </li>
+    <ul>
+        <li class="explain"> <a href="#31-reading-file-content">Reading File Content</a> </li>
+        <li class="explain"> <a href="#32-writing-to-a-file">Writing to a File</a> </li>
+        <li class="explain"> <a href="#33-appending-to-a-file">Appending to a File</a> </li>
+    </ul>
+    <li class="explain"> <a href="#4-file-operations">File Operations</a> </li>
+    <ul>
+        <li class="explain"> <a href="#41-copying-files">Copying Files</a> </li>
+        <li class="explain"> <a href="#42-moving-or-renaming-files">Moving or Renaming Files</a> </li>
+        <li class="explain"> <a href="#43-deleting-files">Deleting Files</a> </li>
+    </ul>
+    <li class="explain"> <a href="#5-advanced-topics">Advanced Topics</a> </li>
+    <ul>
+        <li class="explain"> <a href="#51-using-find-command">Using find Command</a> </li>
+        <li class="explain"> <a href="#52-file-permissions">File Permissions</a> </li>
+        <li class="explain"> <a href="#53-archiving-and-compressing-files">Archiving and Compressing Files</a> </li>
+    </ul>
+    <li class="explain"> <a href="#6-best-practices">Best Practices</a> </li>
+    <ul>
+        <li class="explain"> <a href="#61-error-handling">Error Handling</a> </li>
+        <li class="explain"> <a href="#62-consistent-naming-conventions">Consistent Naming Conventions</a> </li>
+    </ul>
+    <li class="explain"> <a href="#7-examples">Examples</a> </li>
+    <ul>
+        <li class="explain"> <a href="#71-simple-file-operations-script">Simple File Operations Script</a> </li>
+        <li class="explain"> <a href="#72-file-management-in-a-project">File Management in a Project</a> </li>
+    </ul>
+</ol>
+<h2 id="1-introduction" class="guides-h2"> 1. Introduction </h2>
+
+<p class="explain">Understanding file operations is crucial for Bash scripting. This section provides an overview of the importance of file operations in scripting.</p>
+
+<h2 id="2-file-testing" class="guides-h2"> 2. File Testing </h2>
+
+<h3 id="21-checking-if-a-file-exists" class="guides-h3"> 2.1 Checking if a File Exists </h3>
+
+<p class="explain">Use conditional statements to check if a file exists before performing operations.</p>
+
+<pre class="language-bash">
+<code>
+if [ -e "file.txt" ]; then
+    echo "File exists."
+else
+    echo "File does not exist."
+fi
+</code>
+</pre>
+
+<h3 id="22-checking-if-a-file-is-readable" class="guides-h3"> 2.2 Checking if a File is Readable </h3>
+
+<p class="explain">Ensure a file is readable before attempting to read its content.</p>
+
+<pre class="language-bash">
+<code>
+if [ -r "file.txt" ]; then
+    echo "File is readable."
+else
+    echo "File is not readable."
+fi
+</code>
+</pre>
+
+<h3 id="23-checking-if-a-file-is-writable" class="guides-h3"> 2.3 Checking if a File is Writable </h3>
+
+<p class="explain">Check if a file is writable to ensure it can be modified.</p>
+
+<pre class="language-bash">
+<code>
+if [ -w "file.txt" ]; then
+    echo "File is writable."
+else
+    echo "File is not writable."
+fi
+</code>
+</pre>
+
+<h3 id="24-checking-if-a-file-is-executable" class="guides-h3"> 2.4 Checking if a File is Executable </h3>
+
+<p class="explain">Verify if a file has execute permissions.</p>
+
+<pre class="language-bash">
+<code>
+if [ -x "script.sh" ]; then
+    echo "File is executable."
+else
+    echo "File is not executable."
+fi
+</code>
+</pre>
+
+<h2 id="3-reading-and-writing-files" class="guides-h2"> 3. Reading and Writing Files </h2>
+
+<h3 id="31-reading-file-content" class="guides-h3"> 3.1 Reading File Content </h3>
+
+<p class="explain">Use commands like <code>cat</code>, <code>head</code>, or <code>tail</code> to read file content.</p>
+
+<pre class="language-bash">
+<code>
+content=$(cat "file.txt")
+echo "$content"
+</code>
+</pre>
+
+<h3 id="32-writing-to-a-file" class="guides-h3"> 3.2 Writing to a File </h3>
+
+<p class="explain">Write content to a file using redirection (<code>></code>).</p>
+
+<pre class="language-bash">
+<code>
+echo "Hello, World!" > "output.txt"
+</code>
+</pre>
+
+<h3 id="33-appending-to-a-file" class="guides-h3"> 3.3 Appending to a File </h3>
+
+<p class="explain">Append content to an existing file.</p>
+
+<pre class="language-bash">
+<code>
+echo "Additional content" >> "output.txt"
+</code>
+</pre>
+
+<h2 id="4-file-operations" class="guides-h2"> 4. File Operations </h2>
+
+<h3 id="41-copying-files" class="guides-h3"> 4.1 Copying Files </h3>
+
+<p class="explain">Use the <code>cp</code> command to copy files.</p>
+
+<pre class="language-bash">
+<code>
+cp "source.txt" "destination.txt"
+</code>
+</pre>
+
+<h3 id="42-moving-or-renaming-files" class="guides-h3"> 4.2 Moving or Renaming Files </h3>
+
+<p class="explain">Rename or move files with the <code>mv</code> command.</p>
+
+<pre class="language-bash">
+<code>
+mv "oldfile.txt" "newfile.txt"
+</code>
+</pre>
+
+<h3 id="43-deleting-files" class="guides-h3"> 4.3 Deleting Files </h3>
+
+<p class="explain">Remove files using the <code>rm</code> command.</p>
+
+<pre class="language-bash">
+<code>
+rm "file.txt"
+</code>
+</pre>
+
+<h2 id="5-advanced-topics" class="guides-h2"> 5. Advanced Topics </h2>
+
+<h3 id="51-using-find-command" class="guides-h3"> 5.1 Using find Command </h3>
+
+<p class="explain">Explore using the <code>find</code> command for advanced file searching.</p>
+
+<pre class="language-bash">
+<code>
+find /path/to/search -name "*.txt"
+</code>
+</pre>
+
+<h3 id="52-file-permissions" class="guides-h3"> 5.2 File Permissions </h3>
+
+<p class="explain">Understand and manipulate file permissions using <code>chmod</code>.</p>
+
+<pre class="language-bash">
+<code>
+chmod +x script.sh
+</code>
+</pre>
+
+<h3 id="53-archiving-and-compressing-files" class="guides-h3"> 5.3 Archiving and Compressing Files </h3>
+
+<p class="explain">Archive and compress files using tools like <code>tar</code> and <code>gzip</code>.</p>
+
+<pre class="language-bash">
+<code>
+tar -cvf archive.tar files/
+gzip archive.tar
+</code>
+</pre>
+
+<h2 id="6-best-practices" class="guides-h2"> 6. Best Practices </h2>
+
+<h3 id="61-error-handling" class="guides-h3"> 6.1 Error Handling </h3>
+
+<p class="explain">Implement robust error handling in file operations.</p>
+
+<pre class="language-bash">
+<code>
+if [ $? -eq 0 ]; then
+    echo "Operation successful."
+else
+    echo "Error occurred."
+fi
+</code>
+</pre>
+
+<h3 id="62-consistent-naming-conventions" class="guides-h3"> 6.2 Consistent Naming Conventions </h3>
+
+<p class="explain">Adopt consistent naming conventions for files and directories.</p>
+
+<pre class="language-bash">
+<code>
+# Example: Snake case
+my_file_name.txt
+</code>
+</pre>
+
+<h2 id="7-examples" class="guides-h2"> 7. Examples </h2>
+
+<h3 id="71-simple-file-operations-script" class="guides-h3"> 7.1 Simple File Operations Script </h3>
+
+<p class="explain">An example script demonstrating basic file operations. <a href="examples/07.71.file_operations.html">link</a></p>
+
+<h3 id="72-file-management-in-a-project" class="guides-h3"> 7.2 File Management in a Project </h3>
+
+<p class="explain">Explore file management practices within a project. <a href="examples/07.72.file_management.html">link</a></p>
+
+<hr>
+<p class="explain">Continue to <a href="08.advance_topics.html">Part 8: Advance Topics</a>.</p>
+
+<p class="explain">Go back to <a href="README.html">Bash Scripting Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

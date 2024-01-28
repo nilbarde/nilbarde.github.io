@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="docker-basics-guide" class="guides-h1"> Docker Basics Guide </h1>
+
+<p class="explain">This guide provides a quick reference for getting started with Docker on Ubuntu. Docker is a platform for developing, shipping, and running applications in containers.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-installing-docker">Installing Docker</a> </li>
+    <li class="explain"> <a href="#2-running-your-first-container">Running Your First Container</a> </li>
+    <li class="explain"> <a href="#3-building-docker-images">Building Docker Images</a> </li>
+    <li class="explain"> <a href="#4-dockerfile-basics">Dockerfile Basics</a> </li>
+    <li class="explain"> <a href="#5-managing-docker-containers">Managing Docker Containers</a> </li>
+    <li class="explain"> <a href="#6-networking-with-docker">Networking with Docker</a> </li>
+    <li class="explain"> <a href="#7-data-management-with-docker-volumes">Data Management with Docker Volumes</a> </li>
+    <li class="explain"> <a href="#8-docker-compose">Docker Compose</a> </li>
+    <li class="explain"> <a href="#9-docker-hub-and-registry">Docker Hub and Registry</a> </li>
+    <li class="explain"> <a href="#10-docker-cleanup">Docker Cleanup</a> </li>
+</ol>
+<h2 id="1-installing-docker" class="guides-h2"> 1. Installing Docker </h2>
+
+<p class="explain">Install Docker on Ubuntu:</p>
+
+<pre class="language-bash">
+<code>
+sudo apt update
+sudo apt install docker.io
+sudo usermod -aG docker $USER
+</code>
+</pre>
+
+<p class="explain">Logout and login to apply group changes.</p>
+
+<h2 id="2-running-your-first-container" class="guides-h2"> 2. Running Your First Container </h2>
+
+<p class="explain">Run a simple hello-world container to test the installation:</p>
+
+<pre class="language-bash">
+<code>
+docker run hello-world
+</code>
+</pre>
+
+<h2 id="3-building-docker-images" class="guides-h2"> 3. Building Docker Images </h2>
+
+<p class="explain">Create a Dockerfile and build a custom image:</p>
+
+<pre class="language-Dockerfile">
+<code>
+# Dockerfile
+FROM ubuntu:latest
+RUN apt update && apt install -y nginx
+CMD ["nginx", "-g", "daemon off;"]
+</code>
+</pre>
+
+<p class="explain">Build the image:</p>
+
+<pre class="language-bash">
+<code>
+docker build -t my-nginx-image .
+</code>
+</pre>
+
+<h2 id="4-dockerfile-basics" class="guides-h2"> 4. Dockerfile Basics </h2>
+
+<ul>
+    <li class="explain"> <code>FROM</code>: Specifies the base image. </li>
+    <li class="explain"> <code>RUN</code>: Executes commands during image build. </li>
+    <li class="explain"> <code>CMD</code> or <code>ENTRYPOINT</code>: Specifies the default command to run when the container starts. </li>
+</ul>
+<h2 id="5-managing-docker-containers" class="guides-h2"> 5. Managing Docker Containers </h2>
+
+<ul>
+    <li class="explain"> <code>docker ps</code>: List running containers. </li>
+    <li class="explain"> <code>docker ps -a</code>: List all containers (including stopped ones). </li>
+    <li class="explain"> <code>docker stop <container_id></code>: Stop a running container. </li>
+    <li class="explain"> <code>docker start <container_id></code>: Start a stopped container. </li>
+    <li class="explain"> <code>docker rm <container_id></code>: Remove a stopped container. </li>
+</ul>
+<h2 id="6-networking-with-docker" class="guides-h2"> 6. Networking with Docker </h2>
+
+<ul>
+    <li class="explain"> <code>docker network ls</code>: List Docker networks. </li>
+    <li class="explain"> <code>docker network create <network_name></code>: Create a new network. </li>
+    <li class="explain"> <code>docker run --network=<network_name> ...</code>: Connect a container to a network. </li>
+</ul>
+<h2 id="7-data-management-with-docker-volumes" class="guides-h2"> 7. Data Management with Docker Volumes </h2>
+
+<ul>
+    <li class="explain"> <code>docker volume ls</code>: List Docker volumes. </li>
+    <li class="explain"> <code>docker volume create <volume_name></code>: Create a new volume. </li>
+    <li class="explain"> Use volumes to persist data between container restarts. </li>
+</ul>
+<h2 id="8-docker-compose" class="guides-h2"> 8. Docker Compose </h2>
+
+<p class="explain">Create a <code>docker-compose.yml</code> file for multi-container applications:</p>
+
+<pre class="language-yaml">
+<code>
+version: '3'
+services:
+  web:
+    image: nginx:latest
+  db:
+    image: postgres:latest
+</code>
+</pre>
+
+<p class="explain">Run the services:</p>
+
+<pre class="language-bash">
+<code>
+docker-compose up
+</code>
+</pre>
+
+<h2 id="9-docker-hub-and-registry" class="guides-h2"> 9. Docker Hub and Registry </h2>
+
+<ul>
+    <li class="explain"> Create a Docker Hub account: <a href="https://hub.docker.com/">Docker Hub</a> </li>
+    <li class="explain"> Tag your local image: <code>docker tag my-nginx-image username/my-nginx-image</code> </li>
+    <li class="explain"> Push to Docker Hub: <code>docker push username/my-nginx-image</code> </li>
+</ul>
+<h2 id="10-docker-cleanup" class="guides-h2"> 10. Docker Cleanup </h2>
+
+<ul>
+    <li class="explain"> <code>docker system prune</code>: Remove unused data (containers, networks, volumes, etc.). </li>
+    <li class="explain"> <code>docker image prune</code>: Remove dangling images. </li>
+</ul>
+<hr>
+
+<p class="explain">Go back to <a href="README.html">Docker Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>

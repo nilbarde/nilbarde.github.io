@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../data/styles.css">
+    <link rel="stylesheet" href="../../data/guides.css">
+    <link rel="stylesheet" href="../../data/codeDisplay/prism.css">
+    <script defer src="../../data/codeDisplay/prism.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="shortcut icon" href="../../data/images/dp.png" type="image/x-icon">
+    <title>Learning | nilbarde</title>
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../data/images/dp.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-button-normal"><a href="../../aboutme.html">About me</a></li>
+                <li class="menu-button-normal"><a href="../../career.html">Career</a></li>
+                <li class="menu-button-normal"><a href="../../learning/README.html">Learning</a></li>
+                <li><a class="menu-button-boxed" href="../..//data/files/NihalBarde_CV.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="white-back">
+        <div class="guide-inside">
+            <div style="height:75px"></div>
+<h1 id="minimal-ubuntu-docker-image-for-development-guide" class="guides-h1"> Minimal Ubuntu Docker Image for Development Guide </h1>
+
+<p class="explain">This guide provides instructions for creating and using a minimal Ubuntu Docker image tailored for development purposes.</p>
+
+<h2 id="table-of-contents" class="guides-h2"> Table of Contents </h2>
+
+<ol>
+    <li class="explain"> <a href="#1-creating-a-minimal-ubuntu-docker-image">Creating a Minimal Ubuntu Docker Image</a> </li>
+    <li class="explain"> <a href="#2-dockerfile-for-minimal-ubuntu-image">Dockerfile for Minimal Ubuntu Image</a> </li>
+    <li class="explain"> <a href="#3-building-and-running-the-image">Building and Running the Image</a> </li>
+    <li class="explain"> <a href="#4-using-the-development-environment">Using the Development Environment</a> </li>
+    <ul>
+        <li class="explain"> <a href="#41-entering-a-running-container">4.1. Entering a Running Container</a> </li>
+        <li class="explain"> <a href="#42-copying-files-to-running-container">4.2. Copying Files to Running Container</a> </li>
+        <li class="explain"> <a href="#43-attaching-and-using-display">4.3. Attaching and Using Display</a> </li>
+    </ul>
+</ol>
+<h2 id="1-creating-a-minimal-ubuntu-docker-image" class="guides-h2"> 1. Creating a Minimal Ubuntu Docker Image </h2>
+
+<p class="explain">To create a minimal Ubuntu Docker image, use the official Ubuntu base image and minimize the installed packages. Here's a basic Dockerfile:</p>
+
+<h2 id="2-dockerfile-for-minimal-ubuntu-image" class="guides-h2"> 2. Dockerfile for Minimal Ubuntu Image </h2>
+
+<pre class="language-Dockerfile">
+<code>
+# Use an official minimal Ubuntu base image
+FROM ubuntu:20.04
+
+# Update package lists
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    ca-certificates \
+    git \
+    x11-apps \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the working directory
+WORKDIR /app
+</code>
+</pre>
+
+<ul>
+    <li class="explain"> <code>FROM</code>: Specifies the official minimal Ubuntu base image. </li>
+    <li class="explain"> <code>RUN</code>: Updates package lists, upgrades installed packages, and installs essential development tools and X11-apps for display. </li>
+</ul>
+<h2 id="3-building-and-running-the-image" class="guides-h2"> 3. Building and Running the Image </h2>
+
+<p class="explain">Build the Docker image from the Dockerfile:</p>
+
+<pre class="language-bash">
+<code>
+docker build -t minimal-ubuntu-dev .
+</code>
+</pre>
+
+<p class="explain">Run a container from the built image:</p>
+
+<pre class="language-bash">
+<code>
+docker run -it --name minimal-ubuntu-container -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /local/folder/:/docker_workspace/folder/ minimal-ubuntu-dev
+</code>
+</pre>
+
+<h2 id="4-using-the-development-environment" class="guides-h2"> 4. Using the Development Environment </h2>
+
+<p class="explain">Inside the container, you have a minimal Ubuntu environment with essential development tools. Customize the Dockerfile to add additional tools or packages as needed.</p>
+
+<h3 id="41-entering-a-running-container" class="guides-h3"> 4.1. Entering a Running Container </h3>
+
+<p class="explain">To enter a running container:</p>
+
+<pre class="language-bash">
+<code>
+docker exec -it minimal-ubuntu-container bash
+</code>
+</pre>
+
+<h3 id="42-copying-files-to-running-container" class="guides-h3"> 4.2. Copying Files to Running Container </h3>
+
+<p class="explain">To copy files from the host machine to a running container:</p>
+
+<pre class="language-bash">
+<code>
+docker cp /path/to/local/file minimal-ubuntu-container:/app
+</code>
+</pre>
+
+<h3 id="43-attaching-and-using-display" class="guides-h3"> 4.3. Attaching and Using Display </h3>
+
+<p class="explain">To attach and use the display with the container:</p>
+
+<pre class="language-bash">
+<code>
+xhost +local:docker
+</code>
+</pre>
+
+<p class="explain">This allows the container to access the X server on the host.</p>
+
+<hr>
+
+<p class="explain">Go back to <a href="README.html">Docker Guide</a>.</p>
+
+<p class="explain">Visit other <a href="../README.html">Developer Guides</a>.</p>
+
+            <div style="height:50px"></div>
+        </div>
+    </div>
+</body>
+</html>
