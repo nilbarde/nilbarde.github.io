@@ -1,0 +1,11 @@
+Conflict Prediction in Dublin’s Roundabout:
+
+In collaboration with the Dublin Department of Transportation, we tackled a complex roundabout plagued by frequent accidents due to driver confusion. The project aimed to predict vehicle paths and identify potential conflict zones in real-time.
+
+Leveraging my background in self-driving car technology, I collaborated closely with our machine learning team to analyze and select the most efficient path prediction models. We ensured that the models provided real-time accuracy with minimal latency, maintaining a high level of precision and efficiency.
+
+One key innovation was incorporating real-time data verification, allowing us to directly measure accuracy and performance without lengthy setup times. This approach not only streamlined our QA process but also delivered a more realistic and intuitive experience for the client.
+
+To further enhance client satisfaction, I developed a visualization tool that displayed predicted vehicle paths and potential conflict zones in real-time. This visual representation allowed the client to intuitively understand on-ground scenarios, leading to high satisfaction and no requested changes after the first version.
+
+The client’s positive feedback affirmed the success of our approach, and the project set a new standard for real-time traffic safety analytics.

@@ -1,0 +1,48 @@
+  Timeline & Context:
+  1. When did this project happen? (Which year/month range?) February 2025 to March 2025
+  2. How long did it take from start to completion? 2 months from initial client meet to final delivery
+  3. Was this before or after the other Derq projects (blinking signs, API, ATSPM, near-miss)? after all of the mentioned projects
+
+  Team & Your Role:
+  4. Who else was on the team? (Names/roles like with other projects - was Arijit involved?) Senior product manager Arijit was the product owner, who gave me freedom to interact with the client
+  5. What was your specific role title during this project? On paper - lead developer, work wise - product manager cum tech lead
+  6. Did you have any direct reports working on this? - Accuracy 96-98%, client satisfaction - 100%
+
+  Metrics & Impact:
+  7. Do you have any quantifiable metrics? (e.g., accuracy %, latency time, reduction in accidents, client satisfaction score, NPS)
+    accuracy - 97% on average, product requirement was 95%
+    latency - 100ms requirement from the client, 40ms overall latency, module's latency 2ms while peak traffic
+    reduction in accidents - client identified risk areas based on the reports and implemented additional traffic rules
+  8. How many conflict zones were identified? 4 conflict corresponding to 4 incoming directions
+  9. What was the timeline comparison vs typical projects? (like "25% faster" in blinking signs) - project was completed on time, delivery time was reduced from 7 working days (typical product) to less than 1 day, due to automated QA validation
+  10. Any comparison with peers or alternative approaches? - similar to other projects, product managers didn't have to involve much as research and requirement gathering was handled by me
+
+  Technical Details:
+  11. Which ML models did you evaluate/select?
+  evaluated - constant velocity, constant acceleration, constant curvature and acceleration, constant turning rate and acceleration, constant turning rate and velocity, LSTM
+  12. What was the latency requirement and what did you achieve?
+  100ms requirement from the client, 40ms overall latency, module's latency 2ms while peak traffic
+  13. What tech stack did you use for the visualization tool?
+  client was okay rtsp feed, and we had another module ready-to-use to publish rtsp streams, so we used that saving engineering resource on the development
+
+  Client & Business Impact:
+  14. Was this Dublin DoT the client name?
+  Ohio Department of Transportation
+  15. Did this lead to any contract expansion or additional business?
+  Need to check with business team
+  16. Is this still deployed/in use?
+  yes
+  17. Any media coverage or awards?
+  not aware of it
+
+  Challenges & Learning:
+  18. What was the biggest technical challenge you solved?
+  Delivering product on very short timeline and ongoing other parallel tasks
+  Exposing network ports to stream video feed, while following all regulations by the client to maintain security 
+  19. Any crisis moments or pivots during the project?
+  not that I recall
+  20. What did you learn that you applied to later work?
+  gathering client requirement is most important, it is 10% time investment to get 90% output
+
+1. it "Ohio Department of Transportation", city of Dublin
+2. Direct report - 
